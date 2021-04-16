@@ -139,3 +139,15 @@ int searchProductsByPrice(Product *p[], int count, int price) {
   }
   return found;
 }
+
+int searchProductsByWeight(Product *p[], int count, int weight) {
+  int found = 0;
+  for (int i = 0; i < count; i++) {
+    if (p[i] == NULL) continue;
+    if (p[i]->weight == weight) {
+      printProduct(p[i]);
+      found++;
+    };
+  }
+  return found;
+}
