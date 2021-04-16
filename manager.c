@@ -108,3 +108,12 @@ void listProduct(Product *p[], int count) {
     printProduct(p[i]);
   }
 }
+
+int deleteProduct(Product *p[]) {
+  printf("삭제할 ID 입력");
+  int no;
+  scanf("%d", &no);
+  free(p[no]);
+  p[no] = NULL;
+  return 1;
+}
