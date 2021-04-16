@@ -93,3 +93,8 @@ int updateProduct(Product *p[]) {
   scanf("%d", &p[selected]->star_count);
   return selected;
 }
+
+void printProduct(Product *p) {
+  printf("%s %d %d %d(%d)\n", p->name, p->weight, p->price, p->stars,
+         p->star_count);
+}
