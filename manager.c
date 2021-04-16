@@ -28,3 +28,19 @@ int selectMenu() {
   scanf("%d", &temp);
   return temp;
 }
+
+int openFile(Product *p[]) {
+  DPRINT(printf("File Open\n"));
+  FILE *fp = fopen("products.txt", "rt");
+  printf("Loading File\n");
+  if (fp == NULL) return 0;
+  int i = 0;
+  for (i = 0; !feof(fp) && i < 100; i++) {
+    p[i] = malloc(sizeof(Product));
+    fscanf(fp, "%s %d %d %d %d\n", p[i]->name, &p[i]->weight, &p[i]->price,
+           &p[i]->stars, &p[i]->star_count);
+  }
+  fclose(fp);
+  printf("Loaded: %d\n", i);
+  return i;
+}
