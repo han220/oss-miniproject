@@ -9,3 +9,15 @@
 #else
 #define DPRINT
 #endif
+
+void showMenu() {
+  printf("======================\n");
+  printf("Select Menu\n");
+  printf("1) List Items\n");
+  printf("2) Add Item\n");
+  printf("3) Update Item\n");
+  printf("4) Delete Item\n");
+  printf("5) Search Item\n");
+  printf("6) Save\n");
+  printf("7) Quit\n");
+}
