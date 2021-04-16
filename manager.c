@@ -98,3 +98,13 @@ void printProduct(Product *p) {
   printf("%s %d %d %d(%d)\n", p->name, p->weight, p->price, p->stars,
          p->star_count);
 }
+
+void listProduct(Product *p[], int count) {
+  printf("이름   무게   가격   별점(인원)\n");
+
+  for (int i = 0; i < count; i++) {
+    if (p[i] == NULL) continue;
+    printf("%d ", i + 1);
+    printProduct(p[i]);
+  }
+}
