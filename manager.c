@@ -117,3 +117,12 @@ int deleteProduct(Product *p[]) {
   p[no] = NULL;
   return 1;
 }
+
+Product *searchProductByName(Product *p[], int count, char *niddle) {
+  for (int i = 0; i < count; i++) {
+    if (p[i] == NULL) continue;
+    DPRINT(printf("Comparing %s with %s", p[i]->name, niddle));
+    if (strcmp(p[i]->name, niddle) == 0) return p[i];
+  }
+  return NULL;
+}
