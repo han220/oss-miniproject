@@ -126,3 +126,16 @@ Product *searchProductByName(Product *p[], int count, char *niddle) {
   }
   return NULL;
 }
+
+int searchProductsByPrice(Product *p[], int count, int price) {
+  int found = 0;
+  for (int i = 0; i < count; i++) {
+    if (p[i] == NULL) continue;
+    DPRINT(printf("Comparing %d with %d price", p[i]->price, price));
+    if (p[i]->price == price) {
+      printProduct(p[i]);
+      found++;
+    };
+  }
+  return found;
+}
