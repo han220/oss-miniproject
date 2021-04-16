@@ -57,3 +57,19 @@ int saveFile(Product *p[], int count) {
   fclose(fp);
   return i;
 }
+
+int createProduct(Product *p[], int count) {
+  DPRINT(printf("Create Product\n"));
+  p[count] = malloc(sizeof(Product));
+  printf("이름 입력");
+  scanf("%s", p[count]->name);
+  printf("무게 입력");
+  scanf("%d", &p[count]->weight);
+  printf("가격 입력");
+  scanf("%d", &p[count]->price);
+  printf("별점 입력");
+  scanf("%d", &p[count]->stars);
+  printf("리뷰 인원 입력");
+  scanf("%d", &p[count]->star_count);
+  return ++count;
+}
