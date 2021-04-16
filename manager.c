@@ -44,3 +44,16 @@ int openFile(Product *p[]) {
   printf("Loaded: %d\n", i);
   return i;
 }
+
+int saveFile(Product *p[], int count) {
+  DPRINT(printf("Save File\n"));
+  FILE *fp = fopen("products.txt", "wt");
+  int i = 0;
+  for (i = 0; i < count; i++) {
+    if (p[i] == NULL) continue;
+    fprintf(fp, "%s %d %d %d %d\n", p[i]->name, p[i]->weight, p[i]->price,
+            p[i]->stars, p[i]->star_count);
+  }
+  fclose(fp);
+  return i;
+}
