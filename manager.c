@@ -73,3 +73,23 @@ int createProduct(Product *p[], int count) {
   scanf("%d", &p[count]->star_count);
   return ++count;
 }
+
+int updateProduct(Product *p[]) {
+  int selected;
+  printf("번호 선택");
+  scanf("%d", &selected);
+  selected--;
+
+  DPRINT(printf("Updating Product %d\n", selected));
+  printf("이름 입력");
+  scanf("%s", p[selected]->name);
+  printf("무게 입력");
+  scanf("%d", &p[selected]->weight);
+  printf("가격 입력");
+  scanf("%d", &p[selected]->price);
+  printf("별점 입력");
+  scanf("%d", &p[selected]->stars);
+  printf("리뷰 인원 입력");
+  scanf("%d", &p[selected]->star_count);
+  return selected;
+}
