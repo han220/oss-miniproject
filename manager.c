@@ -21,3 +21,10 @@ void showMenu() {
   printf("6) Save\n");
   printf("7) Quit\n");
 }
+
+int selectMenu() {
+  int temp;
+  printf("Menu (1-5): ");
+  scanf("%d", &temp);
+  return temp;
+}
