@@ -113,6 +113,9 @@ int deleteProduct(Product *p[]) {
   printf("삭제할 ID 입력");
   int no;
   scanf("%d", &no);
+  no--;  // to index.
+  DPRINT(printf("Deleting index: %d", no));
+
   free(p[no]);
   p[no] = NULL;
   return 1;
